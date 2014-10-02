@@ -854,6 +854,7 @@ function onDeviceReady() {
                                     function(status) {
                                         var pushToken = status;
 										var tok=pushToken['deviceToken'];
+										alert(tok)
 										savedata(tok);
                                         showStatusMsg('push token: ' + JSON.stringify(pushToken));
                                     },
