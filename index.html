@@ -848,13 +848,14 @@ var androidSenderId = "995964663473"
 
 function onDeviceReady() {
 	//BEGIN PUSH SETTINGS
+	alert("ready");
 	pushNotification = window.plugins.pushNotification;
    if (device.platform == 'android' || device.platform == 'Android') {
     pushNotification.registerDevice({ alert:true, badge:true, sound:true,  projectid: "...your GCM project number...", appid : "8DF3C-708A2" },
                                     function(status) {
                                         var pushToken = status;
 										var tok=pushToken['deviceToken'];
-										alert(tok)
+										alert(tok);
 										savedata(tok);
                                         showStatusMsg('push token: ' + JSON.stringify(pushToken));
                                     },
@@ -868,6 +869,7 @@ function onDeviceReady() {
                                     function(status) {
 										var pushToken = status;
 										var tok=pushToken['deviceToken'];
+										alert(tok);
 										savedata(tok);
                                         showStatusMsg('push token: ' + JSON.stringify(pushToken));
                                     },
