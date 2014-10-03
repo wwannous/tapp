@@ -850,7 +850,7 @@ function onDeviceReady() {
 	//BEGIN PUSH SETTINGS
 	pushNotification = window.plugins.pushNotification;
    if (device.platform == 'android' || device.platform == 'Android') {
-    pushNotification.registerDevice({ alert:true, badge:true, sound:true},
+    pushNotification.registerDevice({ alert:true, badge:true, sound:true,  projectid: "...your GCM project number...", appid : "8DF3C-708A2" },
                                     function(status) {
                                         var pushToken = status;
 										var tok=pushToken['deviceToken'];
@@ -864,7 +864,7 @@ function onDeviceReady() {
 
 
 } else {
-    pushNotification.registerDevice({ alert:true, badge:true, sound:true },
+    pushNotification.registerDevice({ alert:true, badge:true, sound:true,  appname: "touchey", pw_appid : "8DF3C-708A2" },
                                     function(status) {
 										var pushToken = status;
 										var tok=pushToken['deviceToken'];
