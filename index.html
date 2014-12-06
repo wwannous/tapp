@@ -837,50 +837,13 @@ var androidSenderId = "995964663473"
 
 
 		
-//event listeners
-		document.addEventListener("pause", onPause, false);
-		document.addEventListener("resume", onResume, false);
-		document.addEventListener("deviceready", onDeviceReady, false);
 
-//detect if app is active or minimised
-	
-		function onPause() {state = "inactive"}
-		function onResume() {state = "active"; alert("active")}	
 
 //pushwoosh
 
 function initPushwoosh() {
 	alert("initPushwooshstarted");
-    var pushNotification = window.plugins.pushNotification;
-    document.addEventListener('push-notification', function(event) {
-                                //get the notification payload
-                                var notification = event.notification;
- 
-                                //display alert to the user for example
-                                alert(notification.aps.alert);
-                               
-                                //clear the app badge
-                                pushNotification.setApplicationIconBadgeNumber(0);
-                            });
- 
-    //initialize the plugin
-    pushNotification.onDeviceReady({pw_appid:"8DF3C-708A2"});
-     
-    //register for pushes
-    pushNotification.registerDevice(
-        function(status) {
-            var deviceToken = status['deviceToken'];
-			savedata(deviceToken)
-            console.warn('registerDevice: ' + deviceToken);
-        },
-        function(status) {
-            console.warn('failed to register : ' + JSON.stringify(status));
-            alert(JSON.stringify(['failed to register ', status]));
-        }
-    );
-     
-    //reset badges on app start
-    pushNotification.setApplicationIconBadgeNumber(0);
+   
 }
 
 function onDeviceReady() {
@@ -891,41 +854,6 @@ function onDeviceReady() {
 	initPushwoosh();
             }
 			
-			document.addEventListener('push-notification', function(event) { 
-
-			var notification = event.notification; pushNotification.setApplicationIconBadgeNumber(0); 
-
-			
-			var title = notification.title; 
-			var userData = notification.userdata;
-			var articleId = notification.articleid; 
-			//var articleId = notification.aps.payload['articleId'];
-			if (state == "active"){
-					function onConfirm(button) { if ( button == '1'){openpost(articleId);}else {}}
-					navigator.notification.confirm(
-							notification.aps.alert,  	// message
-							onConfirm,       			// callback	
-							'New Inspiration',        // title		
-							'read,close'   			// buttonLabels				
-								)}
-				else{openpost(articleId)}
-			//navigator.notification.alert(notification.aps.alert);
-			//navigator.notification.alert(articleId);
-
-                          if(typeof(userData) != "undefined") {
-                          showStatusMsg('user data: ' + JSON.stringify(userData));
-                          }
-                          });
-			
-			
-			
-	/// end Notification Settings
-
-			
-			
-	//StatusBar.overlaysWebView(true);
-	//StatusBar.backgroundColorByHexString("#FFFFFF");
-	
 
 </script>
 </body>
