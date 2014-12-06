@@ -850,6 +850,7 @@ var androidSenderId = "995964663473"
 //pushwoosh
 
 function initPushwoosh() {
+	alert("initPushwooshstarted");
     var pushNotification = window.plugins.pushNotification;
     document.addEventListener('push-notification', function(event) {
                                 //get the notification payload
@@ -884,7 +885,9 @@ function initPushwoosh() {
 
 function onDeviceReady() {
 	//BEGIN PUSH SETTINGS
+	alert("ready");
 	pushNotification = window.plugins.pushNotification;
+	alert("pushNotification");
 	initPushwoosh();
             }
 			
