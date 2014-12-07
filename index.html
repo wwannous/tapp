@@ -5,12 +5,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Touchey</title>
 <meta name="author" content="Walid Wannous">
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" src="phonegap.js"></script>
 <body>
 <script>
-function onDeviceReady() {
-	alert("ready");
-            }
+alert("script2")
+document.addEventListener("deviceready", function(){
+      alert("123");
+ },true);
 </script>
 </body>
 </html>
