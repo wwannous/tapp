@@ -8,10 +8,10 @@
 <script type="text/javascript" src="phonegap.js"></script>
 <body>
 <script>
-alert("script2")
-document.addEventListener("deviceready", function(){
-      alert("123");
- },true);
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    alert("wooowww")
+}
 </script>
 </body>
 </html>
