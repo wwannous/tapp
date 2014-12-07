@@ -35,13 +35,6 @@ Touchey design brings to you the best of design from around the world; from Grap
 
 
 <!--PLUGINS--> 
-<gap:plugin name="com.phonegap.plugins.childbrowser" />
-<gap:plugin name="com.phonegap.plugin.statusbar" />
-<gap:plugin name="com.adobe.plugins.gaplugin" />
-<!--<gap:plugin name="com.phonegap.plugins.pushplugin" />-->
-<gap:plugin name="org.apache.cordova.device" />
-<gap:plugin name="org.apache.cordova.dialogs" />
-<gap:plugin name="com.pushwoosh.plugins.pushwoosh" />
-<gap:plugin name="de.appplant.cordova.plugin.badge" />
+
 
 </widget>
