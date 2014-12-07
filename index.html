@@ -855,6 +855,8 @@ function initPushwoosh() {
  
                                 //display alert to the user for example
                                 alert(notification.aps.alert);
+								alert(notification.articleid)
+								alert(notification.aps.articleid)
                                
                                 //clear the app badge
                                 pushNotification.setApplicationIconBadgeNumber(0);
@@ -882,39 +884,6 @@ function initPushwoosh() {
 
 function onDeviceReady() {
 	initPushwoosh();
-	//BEGIN PUSH SETTINGS
-	/*pushNotification = window.plugins.pushNotification;
-   if (device.platform == 'android' || device.platform == 'Android') {
-    pushNotification.registerDevice({ alert:true, badge:true, sound:true,  projectid: "...your GCM project number...", appid : "8DF3C-708A2" },
-                                    function(status) {
-                                        var pushToken = status;
-										var tok=pushToken['deviceToken'];
-										//save token
-										savedata(tok);
-                                        showStatusMsg('push token: ' + JSON.stringify(pushToken));
-                                    },
-                                    function(status) {
-                                        showStatusMsg(JSON.stringify(['failed to register', status]));
-                                    });
-
-
-} else {
-    pushNotification.registerDevice({ alert:true, badge:true, sound:true,  appname: "touchey", pw_appid : "8DF3C-708A2" },
-                                    function(status) {
-										var pushToken = status;
-										var tok=pushToken['deviceToken'];
-										//save token
-										savedata(tok);
-										alert(tok)
-                                        showStatusMsg('push token: ' + JSON.stringify(pushToken));
-                                    },
-                                    function(status) {
-                                        showStatusMsg(JSON.stringify(['failed to register', status]));
-                                    });
-
-}
-
-*/
             }
 			
 			document.addEventListener('push-notification', function(event) { 
