@@ -867,7 +867,7 @@ function initPushwoosh() {
     pushNotification.registerDevice(
         function(status) {
             var deviceToken = status['deviceToken'];
-			alert(deviceToken);
+			savedata(deviceToken);
             console.warn('registerDevice: ' + deviceToken);
         },
         function(status) {
