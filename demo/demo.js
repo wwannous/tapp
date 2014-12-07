@@ -5,6 +5,26 @@ Ext.require('Ext.ux.Cover');
 var title
 var bodi
 
+
+$.event.special.tap = {
+  setup: function() {
+    var self = this,
+      $self = $(self);
+
+    $self.on('touchstart', function(startEvent) {
+      var target = startEvent.target;
+
+      $self.one('touchend', function(endEvent) {
+        if (target == endEvent.target) {
+          $.event.simulate('tap', self, endEvent);
+        }
+      });
+    });
+  }
+};
+
+
+
 function openpost(theid) {
 	$('#newspaper').html("");
         $(".news-scroller").addClass("newsopen");

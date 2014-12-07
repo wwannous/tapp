@@ -703,7 +703,7 @@ $('input[type="radio"]').ezMark({
   </div>
 </div>
 <script>
-$('.menu-bt').click(function() {
+$('.menu-bt').on('tap', function() {
 	if ($('.menu-b').css('bottom') == "0px"){
 $(".menu-b").animate({
     bottom: 120-$('.menu-b').height() + "px",
@@ -718,7 +718,7 @@ $(".menu-b").animate({
 });
   
   
-$('.close-bt').click(function() {
+$('.close-bt').on('tap', function() {
 	//1500
    $(".news-scroller").removeClass("newsopen")
    //0
@@ -733,7 +733,7 @@ $('.close-bt').click(function() {
    myScroll.refresh();
    
   });
-   $('.newspaper').click(function() {
+   $('.newspaper').on('tap', function() {
    myScroll.refresh();
    
   }); 
@@ -900,7 +900,7 @@ function initPushwoosh() {
                             });
  
     //initialize the plugin
-    pushNotification.onDeviceReady({pw_appid:"8DF3C-708A2"});
+    //pushNotification.onDeviceReady({pw_appid:"8DF3C-708A2"});
      
     //register for pushes
     pushNotification.registerDevice(
@@ -910,7 +910,6 @@ function initPushwoosh() {
             console.warn('registerDevice: ' + deviceToken);
         },
         function(status) {
-            console.warn('failed to register : ' + JSON.stringify(status));
             alert(JSON.stringify(['failed to register ', status]));
         }
     );
